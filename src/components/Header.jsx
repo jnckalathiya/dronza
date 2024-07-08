@@ -1,5 +1,6 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
+import { Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Sticky from "react-sticky-el";
 const Header = () => {
@@ -7,107 +8,81 @@ const Header = () => {
     <>
       <Sticky className="sticky-header">
         <header>
-          <div className="header-inner">
+          <Navbar expand="lg" className="header-inner">
             <div className="header-container">
-              <div className="logo">
+              <Navbar.Brand href="#home" className="logo">
                 <div className="logo-inner">
                   <Link to="./">
                     <img src="assets/img/logo.png" alt="" />
                   </Link>
                 </div>
-              </div>
-              <div className="menu">
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/about">About</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Services</Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <Link to="/all-services">All Services</Link>
-                      </li>
-                      <li>
-                        <Link to="/services">Services Detail</Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="#">Gallery</Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <Link to="/gallery-grid">Gallery Grid</Link>
-                      </li>
-                      <li>
-                        <Link to="/gallery-details">Gallery Detail</Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="#">Pages</Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <Link to="/team-listing">Team Listing</Link>
-                      </li>
-                      <li>
-                        <Link to="/faq">FAQ</Link>
-                      </li>
-                      <li>
-                        <Link to="/error">Error 404</Link>
-                      </li>
-                      <li>
-                        <Link to="/contact-us">Contact Us</Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="#">Shop</Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <Link to="/shop">Shop</Link>
-                      </li>
-                      <li>
-                        <Link to="/login">My account</Link>
-                      </li>
-                      <li>
-                        <Link to="/cart">Cart</Link>
-                      </li>
-                      <li>
-                        <Link to="/checkout">Checkout</Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="#">Blog</Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <Link to="/latest-news">Latest News</Link>
-                      </li>
-                      <li>
-                        <Link to="/blog-grid">Blog Grid</Link>
-                      </li>
-                      <li>
-                        <Link to="/blog-details">Blog Detail</Link>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+              </Navbar.Brand>
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="">
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/about">About</Nav.Link>
+                  <NavDropdown title="Services" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/all-services">
+                      All Services
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/services">
+                      Services Details
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Gallery" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/gallery-grid">
+                      Gallery Grid
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/gallery-details">
+                      Gallery Details
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Pages" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/team-listing">
+                      Team Listing
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/faq">FAQ</NavDropdown.Item>
+                    <NavDropdown.Item href="/error">Error 404</NavDropdown.Item>
+                    <NavDropdown.Item href="/contact-us">
+                      Contact Us
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Shop" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/shop">Shop</NavDropdown.Item>
+                    <NavDropdown.Item href="/login">
+                      My account
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/cart">Cart</NavDropdown.Item>
+                    <NavDropdown.Item href="/checkout">
+                      Checkout
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Blog" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/latest-news">
+                      Latest News
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/blog-grid">
+                      Blog Grid
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/blog-details">
+                      Blog Detail
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+              </Navbar.Collapse>
               <div className="item">
-                <div className="search">
-                  <Link to="/">
-                    <FaSearch />
+                <div className="user">
+                  <Link to="/login" >
+                    <FaUser />
                   </Link>
                 </div>
                 <div className="mobile-number">
                   <span>(+291) 912-3456-073</span>
                 </div>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
               </div>
             </div>
-          </div>
+          </Navbar>
         </header>
       </Sticky>
     </>

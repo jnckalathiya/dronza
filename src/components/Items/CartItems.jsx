@@ -36,18 +36,18 @@ const CartItems = () => {
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td className="product-remove">
                 <Link to="" className="remove">
                   ×
                 </Link>
               </td>
-              <td>
+              <td className="product-thumbnail">
                 <img src="assets/img/pic-1-300x300.jpg" alt="" />
               </td>
-              <td>DJI Inspire 2</td>
-              <td> £99.00 </td>
-              <td>
-                <div className="input-group">
+              <td className="product-name" data-title="Product :">DJI Inspire 2</td>
+              <td className="product-price" data-title="Price :"> £99.00 </td>
+              <td className="product-quantity" data-title="Quantity :">
+                <div className="input-group" >
                   <input type="number" value={count} />
                   <span>
                     <button type="button" onClick={increment}>
@@ -59,7 +59,7 @@ const CartItems = () => {
                   </span>
                 </div>
               </td>
-              <td> £99.00 </td>
+              <td className="product-subtotal" data-title="Subtotal :"> £99.00 </td>
             </tr>
             <tr>
               <td className="action" colSpan={6}>
